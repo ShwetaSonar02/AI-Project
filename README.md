@@ -1,70 +1,95 @@
-# Getting Started with Create React App
+# AI-Based Interview Monitoring & Evaluation System
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## 🎤 Frontend Voice Interview Interface
 
-## Available Scripts
+This module implements the **Frontend Voice Interaction Layer** of the AI-Based Interview System.
 
-In the project directory, you can run:
+---
 
-### `npm start`
+## 📌 Module Responsibility
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+This project focuses on:
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+* Domain Selection Interface
+* Audio-Based Question Delivery
+* Candidate Voice Recording
+* Interview Progress Tracking
 
-### `npm test`
+This module **does NOT include AI evaluation or backend processing**, as those are handled by other system components.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+---
 
-### `npm run build`
+## ⚙️ Technologies Used
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+* React.js (Frontend Framework)
+* JavaScript (MediaRecorder API)
+* HTML5 / CSS3
+* Browser Audio APIs
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+---
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## 🎯 Features
 
-### `npm run eject`
+### 1️⃣ Domain Selection
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+Candidates select their interview domain:
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+* Java Development
+* Web Development
+* AI / ML
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+---
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+### 2️⃣ Automated Question Playback
 
-## Learn More
+Each question is delivered as an audio file to simulate a real interviewer.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+---
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+### 3️⃣ Candidate Voice Recording
 
-### Code Splitting
+Candidates record answers using their microphone.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+---
 
-### Analyzing the Bundle Size
+### 4️⃣ Interview Progress Display
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+System shows:
 
-### Making a Progressive Web App
+* Current Question Number
+* Completed vs Remaining Questions
+* Visual Progress Bar
+* Interview Completion Status
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+---
 
-### Advanced Configuration
+## 📂 Project Structure
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+```
+public/audio/        → Interview Question Audio Files
+src/App.js           → Interview Logic & UI
+src/App.css          → Styling
+src/DomainSelect.js  → Domain Selector
+```
 
-### Deployment
+---
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+## 🚀 How to Run
 
-### `npm run build` fails to minify
+```
+npm install
+npm start
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Open in browser:
+
+```
+http://localhost:3000
+```
+
+---
+
+## 👩‍💻 Developed By
+
+**Shweta Sonar**
+MCA (2024–2026)
