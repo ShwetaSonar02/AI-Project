@@ -1,91 +1,122 @@
-# AI-Based Interview Monitoring & Evaluation System
+# 🎤 AI-Based Interview Voice Interface (Frontend)
 
-## 🎤 Frontend Voice Interview Interface
+A React.js-based Voice Interview Interface that simulates a real-time technical interview experience.
 
-This module implements the **Frontend Voice Interaction Layer** of the AI-Based Interview System.
-
----
-
-## 📌 Module Responsibility
-
-This project focuses on:
-
-* Domain Selection Interface
-* Audio-Based Question Delivery
-* Candidate Voice Recording
-* Interview Progress Tracking
-
-This module **does NOT include AI evaluation or backend processing**, as those are handled by other system components.
+This module handles candidate interaction, question delivery, audio recording, and interview flow management.
 
 ---
 
-## ⚙️ Technologies Used
+## 📌 Project Overview
 
-* React.js (Frontend Framework)
-* JavaScript (MediaRecorder API)
-* HTML5 / CSS3
-* Browser Audio APIs
+This system allows candidates to:
 
----
+- Select an interview domain  
+- Receive audio-based interview questions  
+- Record voice responses using microphone  
+- Complete a structured interview session  
+- Track interview progress in real time  
 
-## 🎯 Features
-
-### 1️⃣ Domain Selection
-
-Candidates select their interview domain:
-
-* Java Development
-* Web Development
-* AI / ML
+The module is designed to integrate seamlessly with backend AI-based evaluation systems.
 
 ---
 
-### 2️⃣ Automated Question Playback
+## 🚀 Key Features
 
-Each question is delivered as an audio file to simulate a real interviewer.
+- ✅ 10 Confirmed Interview Domains  
+- ✅ 40-Question Bank per Domain  
+- ✅ Random Selection of 10 Questions per Interview  
+- ✅ Dynamic Question Shuffling  
+- ✅ Automatic Audio Playback  
+- ✅ Voice Recording via MediaRecorder API  
+- ✅ Interview Progress Indicator  
+- ✅ Controlled Interview Flow (No Replay/Download)  
+- ✅ Backend Integration Ready  
 
 ---
 
-### 3️⃣ Candidate Voice Recording
+## 📂 Confirmed Interview Domains
 
-Candidates record answers using their microphone.
+1. Full Stack Development  
+2. Python Programming  
+3. Data Science  
+4. Machine Learning  
+5. Digital Marketing  
+6. Deep Learning  
+7. Core Java  
+8. Data Analytics  
+9. Cyber Security  
+10. Artificial Intelligence (AI) / Machine Learning (ML)  
 
 ---
 
-### 4️⃣ Interview Progress Display
+## 🧠 Interview Workflow
 
-System shows:
+1. Candidate selects a domain  
+2. System loads 40-question repository  
+3. 10 questions are randomly selected  
+4. Each question is played as audio  
+5. Recording starts automatically after playback  
+6. Candidate submits answer  
+7. System proceeds to next question  
+8. Interview completion message displayed  
 
-* Current Question Number
-* Completed vs Remaining Questions
-* Visual Progress Bar
-* Interview Completion Status
+---
+
+## 🏗️ Architecture Overview
+
+### 🔹 Frontend Responsibilities
+- Domain Selection  
+- Question Randomization  
+- Audio Playback Handling  
+- Voice Recording Management  
+- Progress Tracking  
+- Interview State Management  
+
+### 🔹 Backend (Future Integration)
+- Speech-to-Text Conversion  
+- AI-Based Answer Evaluation  
+- Scoring & Feedback Generation  
+- Data Storage & Analytics  
+
+---
+
+## 🛠️ Technology Stack
+
+- React.js  
+- JavaScript (ES6+)  
+- HTML5 Audio API  
+- MediaRecorder API  
+- CSS  
 
 ---
 
 ## 📂 Project Structure
 
-```
-public/audio/        → Interview Question Audio Files
-src/App.js           → Interview Logic & UI
-src/App.css          → Styling
-src/DomainSelect.js  → Domain Selector
-```
+public/audio/ → Interview Question Audio Files
+src/App.js → Interview Logic & UI
+src/App.css → Styling
+src/DomainSelect.js → Domain Selector
 
 ---
 
 ## 🚀 How to Run
 
-```
 npm install
 npm start
-```
 
 Open in browser:
 
-```
 http://localhost:3000
-```
+
+---
+
+🔮 Future Enhancements
+
+AI-powered automatic scoring
+Speech-to-text transcription
+Cloud-based answer storage
+Timer per question
+Admin panel for question management
 
 ---
 
