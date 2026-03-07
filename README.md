@@ -92,34 +92,36 @@ The module is designed to integrate seamlessly with backend AI-based evaluation 
 
 ## 📂 Project Structure
 
-Shweta-Sonar-Task1-Frontend-Voice-Interface/
+Shweta-Sonar-Task1-Frontend-Voice-Interface
 │
-├── public/
-│   ├── audio/                → Interview question audio files
-│   │   ├── FullStack1.mp3
-│   │   ├── Python1.mp3
+├── public/                          → Static files
+│   │
+│   ├── audio/                       → Interview question audio files
+│   │   ├── FullStack1.mp3           → Question audio
+│   │   ├── Python1.mp3              → Question audio
+│   │   ├── CyberSecurity1.mp3       → Question audio
 │   │   └── ... (40 per domain)
 │   │
-│   ├── index.html            → Main HTML template
-│   └── manifest.json         → App configuration
+│   ├── index.html                   → Main HTML template
+│   └── manifest.json                → App configuration
 │
-├── src/
-│   ├── App.js                → Interview workflow logic
-│   ├── App.css               → UI styling
-│   ├── DomainSelect.js       → Domain selection UI
-│   ├── index.js              → React entry point
-│   └── reportWebVitals.js    → Performance metrics
+├── src/                             → React source code
+│   │
+│   ├── App.js                       → Interview workflow logic
+│   ├── App.css                      → UI styling
+│   ├── DomainSelect.js              → Domain selection UI
+│   ├── index.js                     → React entry point
+│   └── reportWebVitals.js           → Performance metrics
 │
-├── screenshots/
-│   ├── screen1.png           → Domain selection UI
-│   ├── screen2.png           → Voice question interface
-│   └── screen3.png           → Interview progress screen
+├── screenshots/                     → README screenshots
+│   ├── screen1.png                  → Domain selection screen
+│   ├── screen2.png                  → Voice interview screen
+│   └── screen3.png                  → Interview progress screen
 │
-├── package.json              → Project dependencies
-├── package-lock.json         → Dependency lock file
-├── README.md                 → Project documentation
-└── .gitignore                → Git ignored files
-
+├── package.json                     → Project dependencies
+├── package-lock.json                → Dependency lock file
+├── README.md                        → Project documentation
+└── .gitignore                       → Git ignored files
 ---
 
 ## 🚀 How to Run
