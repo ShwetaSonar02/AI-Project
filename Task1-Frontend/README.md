@@ -157,21 +157,28 @@ http://localhost:3000
 
 ---
 
-🆕 🔥 Updated Screens (After STT Integration)
+## 🆕 🔥 Updated Screens (After STT Integration)
 
-\screenshots\updated1.png
+### 🔹 First Page
+![Recording](screenshots/updated1.png)
 
-\screenshots\updated2.png
+### 🔹 Domain Selection
+![Transcript](screenshots/updated2.png)
 
-\screenshots\updated3.png
+### 🔹 Voice Interface
+![Error](screenshots/updated3.png)
 
-\screenshots\updated4.png
+### 🧠 Speech-to-Text Output
+![Progress](screenshots/updated4.png)
 
-\screenshots\updated5.png
+### ⚠️ Error Handling
+![Flow](screenshots/updated5.png)
 
-\screenshots\updated6.png
+### ⚠️ Error Handling
+![Audio](screenshots/updated6.png)
 
-\screenshots\updated7.png
+### 🧩 Full Interface
+![UI](screenshots/updated7.png)
 
 ## 👩‍💻 Developed By
 
