@@ -8,50 +8,51 @@ function App() {
   const [statusText, setStatusText] = useState("System Ready");
   const [isRecording, setIsRecording] = useState(false);
   const [shuffledQuestions, setShuffledQuestions] = useState([]);
+  const [transcript, setTranscript] = useState(""); // ✅ NEW
 
   const mediaRecorderRef = useRef(null);
   const chunksRef = useRef([]);
 
   /* --------------------------------------------------
-   🎯 CREATE 40 QUESTIONS PER DOMAIN (QUESTION BANK)
--------------------------------------------------- */
+   🎯 CREATE QUESTIONS
+  -------------------------------------------------- */
+  const generateQuestions = (prefix) => {
+    const arr = [];
+    for (let i = 1; i <= 40; i++) {
+      arr.push(`/audio/${prefix}${i}.mp3`);
+    }
+    return arr;
+  };
 
-const generateQuestions = (prefix) => {
-  const arr = [];
-  for (let i = 1; i <= 40; i++) {
-    arr.push(`/audio/${prefix}${i}.mp3`);
-  }
-  return arr;
-};
+  const domainQuestions = {
+    fullstack: generateQuestions("Development"),
+    python: generateQuestions("Python"),
+    datascience: generateQuestions("DataScience"),
+    ml: generateQuestions("ML"),
+    digital: generateQuestions("Marketing"),
+    deeplearning: generateQuestions("DeepLearning"),
+    corejava: generateQuestions("CoreJava"),
+    analytics: generateQuestions("DataAnalytics"),
+    cyber: generateQuestions("CyberSecurity"),
+    aiml: generateQuestions("AI"),
+  };
 
-const domainQuestions = {
-  fullstack: generateQuestions("Development"),
-  python: generateQuestions("Python"),
-  datascience: generateQuestions("ai"),
-  ml: generateQuestions("ai"),
-  digital: generateQuestions("web"),
-  deeplearning: generateQuestions("ai"),
-  corejava: generateQuestions("java"),
-  analytics: generateQuestions("web"),
-  cyber: generateQuestions("ai"),
-  aiml: generateQuestions("ai"),
-};
   /* --------------------------------------------------
-   🔀 SHUFFLE AND PICK ONLY 10 QUESTIONS
--------------------------------------------------- */
-const getRandomQuestions = (questions, count = 10) => {
-  const shuffled = [...questions].sort(() => Math.random() - 0.5);
-  return shuffled.slice(0, count); // pick only 10
-};
+   🔀 RANDOM 10 QUESTIONS
+  -------------------------------------------------- */
+  const getRandomQuestions = (questions, count = 10) => {
+    const shuffled = [...questions].sort(() => Math.random() - 0.5);
+    return shuffled.slice(0, count);
+  };
 
   const handleDomainSelect = (domain) => {
-  const selectedSet = getRandomQuestions(domainQuestions[domain], 10);
+    const selectedSet = getRandomQuestions(domainQuestions[domain], 10);
 
-  setSelectedDomain(domain);
-  setShuffledQuestions(selectedSet); // only 10 stored
-  setQuestionIndex(0);
-  setStatusText("Interview Started");
-};
+    setSelectedDomain(domain);
+    setShuffledQuestions(selectedSet);
+    setQuestionIndex(0);
+    setStatusText("Interview Started");
+  };
 
   const totalQuestions = shuffledQuestions.length;
 
@@ -61,7 +62,7 @@ const getRandomQuestions = (questions, count = 10) => {
       : 0;
 
   /* --------------------------------------------------
-     ▶ PLAY QUESTION AUDIO
+     ▶ PLAY QUESTION
   -------------------------------------------------- */
   const playQuestion = () => {
     if (questionIndex >= totalQuestions) {
@@ -111,19 +112,40 @@ const getRandomQuestions = (questions, count = 10) => {
     if (mediaRecorderRef.current) {
       mediaRecorderRef.current.stop();
       setIsRecording(false);
-      setStatusText("Saving Response...");
+      setStatusText("Processing Answer...");
     }
   };
 
   /* --------------------------------------------------
-     📡 HANDLE ANSWER (NO DOWNLOAD NOW)
-     → Ready to send backend later
+     📡 SEND AUDIO TO BACKEND (IMPORTANT 🔥)
   -------------------------------------------------- */
-  const handleAnswerSubmit = () => {
-    const blob = new Blob(chunksRef.current, { type: "audio/webm" });
+  const handleAnswerSubmit = async () => {
+    const blob = new Blob(chunksRef.current, { type: "audio/wav" });
 
-    console.log("Recorded Answer Blob:", blob); // future API upload
+    const formData = new FormData();
+    formData.append("audio", blob, "answer.webm");
+    console.log("🔥 Sending audio to backend...");
 
+    try {
+      const res = await fetch("http://127.0.0.1:5000/speech-to-text", {
+        method: "POST",
+        body: formData,
+      });
+
+      const data = await res.json();
+
+      if (data.text) {
+        console.log("User said:", data.text);
+        //setTranscript(data.text); // ✅ SHOW TEXT
+      } else {
+        setTranscript("No speech detected");
+      }
+    } catch (error) {
+      console.error(error);
+      setTranscript("Error converting speech");
+    }
+
+    // Move to next question
     if (questionIndex + 1 < totalQuestions) {
       setQuestionIndex((prev) => prev + 1);
       setStatusText("Answer Saved. Next Question Ready.");
@@ -156,6 +178,11 @@ const getRandomQuestions = (questions, count = 10) => {
             Completed: {Math.min(questionIndex, totalQuestions)} | Remaining:{" "}
             {Math.max(totalQuestions - questionIndex, 0)}
           </p>
+
+          {/* ✅ SHOW TRANSCRIPT */}
+          <div style={{ margin: "10px", fontWeight: "bold" }}>
+            🧠 Your Answer (Text): {transcript}
+          </div>
 
           {/* Progress Bar */}
           <div className="progress-bar">
