@@ -157,6 +157,22 @@ http://localhost:3000
 
 ---
 
+🆕 🔥 Updated Screens (After STT Integration)
+
+\screenshots\updated1.png
+
+\screenshots\updated2.png
+
+\screenshots\updated3.png
+
+\screenshots\updated4.png
+
+\screenshots\updated5.png
+
+\screenshots\updated6.png
+
+\screenshots\updated7.png
+
 ## 👩‍💻 Developed By
 
 **Shweta Sonar**
