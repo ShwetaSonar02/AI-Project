@@ -10,151 +10,149 @@ This module handles candidate interaction, question delivery, audio recording, a
 
 This system allows candidates to:
 
-- Select an interview domain  
-- Receive audio-based interview questions  
-- Record voice responses using microphone  
-- Complete a structured interview session  
-- Track interview progress in real time  
-
-The module is designed to integrate seamlessly with backend AI-based evaluation systems.
+* Select an interview domain
+* Receive audio-based interview questions
+* Record voice responses using microphone
+* Complete a structured interview session
+* Track interview progress in real time
 
 ---
 
 ## 🚀 Key Features
 
-- ✅ 10 Confirmed Interview Domains  
-- ✅ 40-Question Bank per Domain  
-- ✅ Random Selection of 10 Questions per Interview  
-- ✅ Dynamic Question Shuffling  
-- ✅ Automatic Audio Playback  
-- ✅ Voice Recording via MediaRecorder API  
-- ✅ Interview Progress Indicator  
-- ✅ Controlled Interview Flow (No Replay/Download)  
-- ✅ Backend Integration Ready  
+* ✅ 10 Interview Domains
+* ✅ 40 Questions per Domain
+* ✅ Random Selection of 10 Questions
+* ✅ Dynamic Question Shuffling
+* ✅ Automatic Audio Playback
+* ✅ Voice Recording via MediaRecorder API
+* ✅ Interview Progress Tracking
+* ✅ Controlled Interview Flow
+* ✅ Backend Integration (Speech-to-Text)
 
 ---
 
-## 📂 Confirmed Interview Domains
+## 🆕 🔥 Latest Update (Task 2 Integration)
 
-1. Full Stack Development  
-2. Python Programming  
-3. Data Science  
-4. Machine Learning  
-5. Digital Marketing  
-6. Deep Learning  
-7. Core Java  
-8. Data Analytics  
-9. Cyber Security  
-10. Artificial Intelligence (AI) / Machine Learning (ML)  
+This frontend is now successfully integrated with the backend Speech-to-Text system.
+
+### ✅ New Enhancements:
+
+* 🎤 Recorded audio is sent to Flask backend
+* 🧠 Speech is converted into text using STT
+* 📄 Transcribed answer is displayed on UI
+* ⚠️ Handles silent / empty audio inputs
+* 🔁 Improved user experience with error handling
 
 ---
 
 ## 🧠 Interview Workflow
 
-1. Candidate selects a domain  
-2. System loads 40-question repository  
-3. 10 questions are randomly selected  
-4. Each question is played as audio  
-5. Recording starts automatically after playback  
-6. Candidate submits answer  
-7. System proceeds to next question  
-8. Interview completion message displayed  
+1. Candidate selects a domain
+2. System loads question bank
+3. 10 questions are randomly selected
+4. Audio question is played
+5. Recording starts automatically
+6. Answer is recorded and sent to backend
+7. Speech is converted into text
+8. Text is displayed on UI
+9. System moves to next question
 
 ---
 
 ## 🏗️ Architecture Overview
 
 ### 🔹 Frontend Responsibilities
-- Domain Selection  
-- Question Randomization  
-- Audio Playback Handling  
-- Voice Recording Management  
-- Progress Tracking  
-- Interview State Management  
 
-### 🔹 Backend (Future Integration)
-- Speech-to-Text Conversion  
-- AI-Based Answer Evaluation  
-- Scoring & Feedback Generation  
-- Data Storage & Analytics  
+* Domain Selection
+* Question Randomization
+* Audio Playback
+* Voice Recording
+* API Communication (Backend)
+* Progress Tracking
+
+### 🔹 Backend Integration
+
+* Speech-to-Text Conversion (Flask)
+* Audio Processing (WebM → WAV)
+* Google Speech Recognition API
 
 ---
 
 ## 🛠️ Technology Stack
 
-- React.js  
-- JavaScript (ES6+)  
-- HTML5 Audio API  
-- MediaRecorder API  
-- CSS  
+* React.js
+* JavaScript (ES6+)
+* MediaRecorder API
+* HTML5 Audio API
+* CSS
 
 ---
 
 ## 📂 Project Structure
+
+```id="h8u2ka"
+Task1-Frontend/
+│
+├── public/
+│   ├── audio/                  # Question audio files
+│   ├── index.html
+│
+├── src/
+│   ├── App.js                  # Interview logic + API integration
+│   ├── DomainSelect.js
+│   ├── App.css
+│   ├── index.js
+│
+├── screenshots/
+├── package.json
+└── README.md
 ```
-Shweta-Sonar-Task1-Frontend-Voice-Interface
-│
-├── public/                          → Static files
-│   │
-│   ├── audio/                       → Interview question audio files
-│   │   ├── FullStack1.mp3           → Question audio
-│   │   ├── Python1.mp3              → Question audio
-│   │   ├── CyberSecurity1.mp3       → Question audio
-│   │   └── ... (40 per domain)
-│   │
-│   ├── index.html                   → Main HTML template
-│   └── manifest.json                → App configuration
-│
-├── src/                             → React source code
-│   │
-│   ├── App.js                       → Interview workflow logic
-│   ├── App.css                      → UI styling
-│   ├── DomainSelect.js              → Domain selection UI
-│   ├── index.js                     → React entry point
-│   └── reportWebVitals.js           → Performance metrics
-│
-├── screenshots/                     → README screenshots
-│   ├── screen1.png                  → Domain selection screen
-│   ├── screen2.png                  → Voice interview screen
-│   └── screen3.png                  → Interview progress screen
-│
-├── package.json                     → Project dependencies
-├── package-lock.json                → Dependency lock file
-├── README.md                        → Project documentation
-└── .gitignore                       → Git ignored files
-```
+
 ---
 
 ## 🚀 How to Run
 
+```bash id="o0tqtx"
 npm install
 npm start
+```
 
-Open in browser:
-
+Open:
 http://localhost:3000
 
 ---
 
-🔮 Future Enhancements
+## ⚠️ Important Notes
 
-AI-powered automatic scoring
-Speech-to-text transcription
-Cloud-based answer storage
-Timer per question
-Admin panel for question management
+* 🎙️ Allow microphone permissions
+* 🌐 Backend server must be running
+* 🔗 API endpoint: http://127.0.0.1:5000/speech-to-text
 
 ---
 
-## 📸 Application Screenshots
+## 🔮 Future Enhancements
+
+* AI-based answer evaluation
+* Score generation
+* Cloud storage
+* Timer-based questions
+* Admin panel
+
+---
+
+## 📸 Screenshots
 
 ### 🔹 Domain Selection
-![Domain Selection](screenshots/screen1.png)
 
-### 🔹 Voice Question & Recording
-![Voice Interface](screenshots/screen2.png)
+![Domain](screenshots/screen1.png)
 
-### 🔹 Interview Progress Tracking
+### 🔹 Voice Interface
+
+![Voice](screenshots/screen2.png)
+
+### 🔹 Progress Tracking
+
 ![Progress](screenshots/screen3.png)
 
 ---
@@ -162,4 +160,4 @@ Admin panel for question management
 ## 👩‍💻 Developed By
 
 **Shweta Sonar**
-MCA (2024–2026)
+MCA Student | Full Stack Java Developer
