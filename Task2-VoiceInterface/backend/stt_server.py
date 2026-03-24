@@ -34,13 +34,32 @@ def speech_to_text():
         sound.export(wav_path, format="wav")
 
         recognizer = sr.Recognizer()
+        recognizer.energy_threshold = 300
+        recognizer.dynamic_energy_threshold = True
 
         with sr.AudioFile(wav_path) as source:
             audio = recognizer.record(source)
 
-        text = recognizer.recognize_google(audio)
+        # ✅ Improved handling
+        try:
+            text = recognizer.recognize_google(audio)
 
-        print("✅ Recognized Text:", text)
+            if not text.strip():
+                text = "No speech detected. Please speak clearly."
+
+            print("✅ Recognized Text:", text)
+
+        except sr.UnknownValueError:
+            text = "No speech detected. Please speak clearly."
+            print("⚠️ No speech detected")
+
+        except sr.RequestError:
+            text = "Speech service unavailable"
+            print("⚠️ API unavailable")
+
+        except Exception as e:
+            print("❌ ERROR:", str(e))
+            text = "Error processing audio"
 
         # Cleanup
         os.remove(webm_path)
@@ -49,7 +68,7 @@ def speech_to_text():
         return jsonify({"text": text})
 
     except Exception as e:
-        print("❌ ERROR:", str(e))
+        print("❌ SERVER ERROR:", str(e))
         return jsonify({"error": str(e)})
 
 if __name__ == "__main__":

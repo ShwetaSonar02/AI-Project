@@ -120,41 +120,47 @@ function App() {
      📡 SEND AUDIO TO BACKEND (IMPORTANT 🔥)
   -------------------------------------------------- */
   const handleAnswerSubmit = async () => {
-    const blob = new Blob(chunksRef.current, { type: "audio/wav" });
+  const blob = new Blob(chunksRef.current, { type: "audio/webm" });
 
-    const formData = new FormData();
-    formData.append("audio", blob, "answer.webm");
-    console.log("🔥 Sending audio to backend...");
+  // ✅ Prevent empty/silent recording
+  if (blob.size < 2000) {
+    setTranscript("⚠️ Please speak something!");
+    return;
+  }
 
-    try {
-      const res = await fetch("http://127.0.0.1:5000/speech-to-text", {
-        method: "POST",
-        body: formData,
-      });
+  const formData = new FormData();
+  formData.append("audio", blob, "answer.webm");
 
-      const data = await res.json();
+  console.log("🔥 Sending audio to backend...");
 
-      if (data.text) {
-        console.log("User said:", data.text);
-        //setTranscript(data.text); // ✅ SHOW TEXT
-      } else {
-        setTranscript("No speech detected");
-      }
-    } catch (error) {
-      console.error(error);
-      setTranscript("Error converting speech");
-    }
+  try {
+    const res = await fetch("http://127.0.0.1:5000/speech-to-text", {
+      method: "POST",
+      body: formData,
+    });
 
-    // Move to next question
-    if (questionIndex + 1 < totalQuestions) {
-      setQuestionIndex((prev) => prev + 1);
-      setStatusText("Answer Saved. Next Question Ready.");
+    const data = await res.json();
+
+    if (data.text) {
+      console.log("User said:", data.text);
+      setTranscript(data.text); // ✅ SHOW TEXT
     } else {
-      setQuestionIndex(totalQuestions);
-      setStatusText("🎉 Interview Completed Successfully!");
+      setTranscript("⚠️ No response from server");
     }
-  };
+  } catch (error) {
+    console.error(error);
+    setTranscript("❌ Error converting speech");
+  }
 
+  // Next question
+  if (questionIndex + 1 < totalQuestions) {
+    setQuestionIndex((prev) => prev + 1);
+    setStatusText("Answer Saved. Next Question Ready.");
+  } else {
+    setQuestionIndex(totalQuestions);
+    setStatusText("🎉 Interview Completed Successfully!");
+  }
+};
   /* --------------------------------------------------
      UI
   -------------------------------------------------- */
@@ -181,7 +187,7 @@ function App() {
 
           {/* ✅ SHOW TRANSCRIPT */}
           <div style={{ margin: "10px", fontWeight: "bold" }}>
-            🧠 Your Answer (Text): {transcript}
+            🧠 Your Answer : {transcript}
           </div>
 
           {/* Progress Bar */}
