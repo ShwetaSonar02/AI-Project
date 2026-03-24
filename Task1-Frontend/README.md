@@ -159,23 +159,23 @@ http://localhost:3000
 
 ## 🆕 🔥 Updated Screens (After STT Integration)
 
-### 🔹 First Page
-![Recording](screenshots/updated1.png)
+### 🧭 Domain Selection
+![Domain](screenshots/updated1.png)
 
-### 🔹 Domain Selection
-![Transcript](screenshots/updated2.png)
+### 🎙️ Voice Interface
+![Voice](screenshots/updated2.png)
 
-### 🔹 Voice Interface
-![Error](screenshots/updated3.png)
+### 🎤 Recording State
+![Recording](screenshots/updated3.png)
 
 ### 🧠 Speech-to-Text Output
-![Progress](screenshots/updated4.png)
+![Transcript](screenshots/updated4.png)
 
-### ⚠️ Error Handling
-![Flow](screenshots/updated5.png)
+### ⚠️ Error Handling (No Speech)
+![Error](screenshots/updated5.png)
 
-### ⚠️ Error Handling
-![Audio](screenshots/updated6.png)
+### 🔄 Question Flow
+![Flow](screenshots/updated6.png)
 
 ### 🧩 Full Interface
 ![UI](screenshots/updated7.png)
