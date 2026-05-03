@@ -114,28 +114,27 @@ npm start
 ### 🟢 1. Interview Start (Easy Level)
 User starts the interview with an easy-level question. The system displays question count, score, and difficulty level.
 
-![Start](C:\Users\Lenovo\AI-Project\Task3-Interview\screenshots\correct.png)
-
+![Start](./screenshots/start.png)
 ---
 
 ### ✅ 2. Correct Answer Feedback
 When the user submits a correct answer, the system provides instant feedback and increases the score.
 
-![Correct](https://raw.githubusercontent.com/ShwetaSonar02/AI-Project/main/Task3-Interview/screenshots/correct.png)
+![Correct](./screenshots/correct.png)
 
 ---
 
 ### ❌ 3. Wrong Answer Handling
 If the answer is incorrect, the system shows feedback and adjusts difficulty accordingly.
 
-![Wrong](https://raw.githubusercontent.com/ShwetaSonar02/AI-Project/main/Task3-Interview/screenshots/wrong.png)
+![Wrong](./screenshots/wrong.png)
 
 ---
 
 ### 🎉 4. Interview Completion Screen
 After completing all questions, the system displays the final score with an option to restart.
 
-![Result](https://raw.githubusercontent.com/ShwetaSonar02/AI-Project/main/Task3-Interview/screenshots/result.png)
+![Result](./screenshots/result.png)
 
 ---
 
