@@ -114,28 +114,28 @@ npm start
 ### 🟢 1. Interview Start (Easy Level)
 User starts the interview with an easy-level question. The system displays question count, score, and difficulty level.
 
-![Start](/screenshots/start.png)
+![Start](https://raw.githubusercontent.com/ShwetaSonar02/AI-Project/main/Task3-Interview/screenshots/start.png)
 
 ---
 
 ### ✅ 2. Correct Answer Feedback
 When the user submits a correct answer, the system provides instant feedback and increases the score.
 
-![Correct](/screenshots/correct.png)
+![Correct](https://raw.githubusercontent.com/ShwetaSonar02/AI-Project/main/Task3-Interview/screenshots/correct.png)
 
 ---
 
 ### ❌ 3. Wrong Answer Handling
 If the answer is incorrect, the system shows feedback and adjusts difficulty accordingly.
 
-![Wrong](/screenshots/wrong.png)
+![Wrong](https://raw.githubusercontent.com/ShwetaSonar02/AI-Project/main/Task3-Interview/screenshots/wrong.png)
 
 ---
 
 ### 🎉 4. Interview Completion Screen
 After completing all questions, the system displays the final score with an option to restart.
 
-![Result](/screenshots/result.png)
+![Result](https://raw.githubusercontent.com/ShwetaSonar02/AI-Project/main/Task3-Interview/screenshots/result.png)
 
 ---
 
