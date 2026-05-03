@@ -114,7 +114,7 @@ npm start
 ### 🟢 1. Interview Start (Easy Level)
 User starts the interview with an easy-level question. The system displays question count, score, and difficulty level.
 
-![Start](https://raw.githubusercontent.com/ShwetaSonar02/AI-Project/main/Task3-Interview/screenshots/start.png)
+![Start](C:\Users\Lenovo\AI-Project\Task3-Interview\screenshots\correct.png)
 
 ---
 
